@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import { AppLayout } from "./components/layout/AppLayout";
 import "./App.css";
 import { Home } from "./pages/Home";
@@ -7,26 +7,26 @@ import { Contact } from "./pages/Contact";
 import { Country } from "./pages/Country";
 import { ErrorPage } from "./pages/ErrorPage";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <AppLayout />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/atlas-world",
+        path: "/",
         element: <Home />,
       },
       {
-        path: "/atlas-world/about",
+        path: "/about",
         element: <About />,
       },
       {
-        path: "/atlas-world/country",
+        path: "/country",
         element: <Country />,
       },
       {
-        path: "/atlas-world/contact",
+        path: "/contact",
         element: <Contact />,
       },
     ],
