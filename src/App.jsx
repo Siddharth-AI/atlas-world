@@ -7,36 +7,31 @@ import { Contact } from "./pages/Contact";
 import { Country } from "./pages/Country";
 import { ErrorPage } from "./pages/ErrorPage";
 
-const router = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: <AppLayout />,
-      errorElement: <ErrorPage />,
-      children: [
-        {
-          path: "/",
-          element: <Home />,
-        },
-        {
-          path: "/about",
-          element: <About />,
-        },
-        {
-          path: "/country",
-          element: <Country />,
-        },
-        {
-          path: "/contact",
-          element: <Contact />,
-        },
-      ],
-    },
-  ],
+const router = createBrowserRouter([
   {
-    basename: "/atlas-world",
-  }
-);
+    path: "/",
+    element: <AppLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/atlas-world",
+        element: <Home />,
+      },
+      {
+        path: "/atlas-world/about",
+        element: <About />,
+      },
+      {
+        path: "/atlas-world/country",
+        element: <Country />,
+      },
+      {
+        path: "/atlas-world/contact",
+        element: <Contact />,
+      },
+    ],
+  },
+]);
 
 function App() {
   return <RouterProvider router={router}></RouterProvider>;
