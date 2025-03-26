@@ -1,37 +1,42 @@
 export const Contact = () => {
   const handleFormSubmit = (formData) => {
+    // console.log(formData.entries());
     const formInputData = Object.fromEntries(formData.entries());
+    console.log(formInputData);
   };
 
   return (
     <section className="section-contact">
-      <h1 className="container-title">Contact Us</h1>
-      <div className="container contact-wrapper">
+      <h2 className="container-title">Contact Us</h2>
+
+      <div className="contact-wrapper container">
         <form action={handleFormSubmit}>
           <input
             type="text"
             className="form-control"
-            autoComplete="false"
-            placeholder="Enter your name"
+            placeholder="enter your name"
             name="username"
             required
+            autoComplete="off"
           />
+
           <input
             type="email"
             className="form-control"
-            autoComplete="false"
-            placeholder="Enter your email"
+            placeholder="Enter you email"
             name="email"
             required
+            autoComplete="off"
           />
+
           <textarea
             className="form-control"
             rows="10"
-            autoComplete="false"
             placeholder="Enter your message"
             name="message"
             required
-          />
+            autoComplete="off"></textarea>
+
           <button type="submit" value="send">
             Send
           </button>

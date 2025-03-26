@@ -24,7 +24,7 @@ export const CountryCard = ({ country }) => {
             <span className="card-description">Capital : </span>
             {capital[0]}
           </p>
-          <NavLink to={`/contact/${name.common}`}>
+          <NavLink to={`/country/${name.common}`}>
             <button>Read More</button>
           </NavLink>
         </div>
